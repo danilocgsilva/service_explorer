@@ -27,4 +27,4 @@ This solution is composed of:
 
 * LICENCE: Obvious, the LICENCE of the project.
 * web_application: The web application intended to be installed in a serve to store endpoints informations.
-* local_checker: A script to run in the local development machine ti keep track to which the local development machine is connected to.
+* local_checker: A script to run in the machine where application is installed to keep track to which the local development machine is connected to. It can serve both to be installed in the development machine or in the server machine.
