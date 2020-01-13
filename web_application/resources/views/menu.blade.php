@@ -23,10 +23,10 @@
 
       <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="#">Register</span></a>
+            <a class="nav-link" href="{{ route('register') }}">Register</span></a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="#">Login</span></a>
+            <a class="nav-link" href="{{ route('login') }}">Login</span></a>
         </li>
       </ul>
     </div>
