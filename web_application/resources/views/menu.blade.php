@@ -11,7 +11,7 @@
     <div class="collapse navbar-collapse" id="conteudoNavbarSuportado">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-            <a class="nav-link" href="#">Home <span class="sr-only">(página atual)</span></a>
+            <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(página atual)</span></a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Services/Endpoints</a>
@@ -22,9 +22,6 @@
       </ul>
 
       <ul class="navbar-nav">
-        <li class="nav-item">
-            <a class="nav-link" href="{{ route('register') }}">Register</span></a>
-        </li>
         <li class="nav-item">
             <a class="nav-link" href="{{ route('login') }}">Login</span></a>
         </li>

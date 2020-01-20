@@ -11,7 +11,13 @@
 |
 */
 
-Route::get('/', 'HomeController@index');
+Route::get('/', 'HomeController@index')->name('home');
 
-Auth::routes(['confirm' => false]);
+// Auth::routes(['confirm' => false]);
+Auth::routes([
+    'register' => false, 
+    'confirm' => false,
+    'reset' => false
+]);
+// Auth::routes();
 
