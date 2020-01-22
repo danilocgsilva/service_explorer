@@ -5,26 +5,27 @@ namespace Tests\Feature\Repositories;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Foundation\Testing\WithFaker;
 use App\Repositories\UserRepository;
+use App\Repositories\RepositoryException;
 use Tests\TestCase;
 
 class UserRepositoryTest extends TestCase
 {
+    /**
+     * @var UserReporitory
+     */
     private $userRepository;
 
     public function setUp()
     {
+        parent::setUp();
         $this->userRepository = new UserRepository();
     }
 
-    /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function testExample()
+    public function testExceptionCreatingTwoUsersWithSameEmail()
     {
-        $response = $this->get('/');
+        $this->expectException(RepositoryException::class);
 
-        $response->assertStatus(200);
+        $this->userRepository->createUser('user1mail@test.com', 'testPassword');
+        $this->userRepository->createUser('user2mail@test.com', 'testPassword');
     }
 }
