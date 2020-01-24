@@ -10,12 +10,13 @@ use Tests\TestCase;
 
 class UserRepositoryTest extends TestCase
 {
+    use RefreshDatabase;
     /**
      * @var UserReporitory
      */
     private $userRepository;
 
-    public function setUp()
+    public function setUp() : void
     {
         parent::setUp();
         $this->userRepository = new UserRepository();
@@ -26,6 +27,6 @@ class UserRepositoryTest extends TestCase
         $this->expectException(RepositoryException::class);
 
         $this->userRepository->createUser('user1mail@test.com', 'testPassword');
-        $this->userRepository->createUser('user2mail@test.com', 'testPassword');
+        $this->userRepository->createUser('user1mail@test.com', 'testPassword');
     }
 }

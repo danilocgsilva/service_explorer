@@ -16,6 +16,10 @@ class UserRepository
      */
     public function createUser(string $email, string $password)
     {
+        if (User::where(['email' => $email, 'password' => $password])->exists()) {
+            throw new RepositoryException("Already exists a user with the e-mail provided to create a new user. E-mails must not repeat in the records data.");
+        }
+
         return User::create([
             'email' => $email,
             'password' => bcrypt($password)
