@@ -12,7 +12,7 @@ class UserRepositoryTest extends TestCase
 {
     use RefreshDatabase;
     /**
-     * @var UserReporitory
+     * @var UserRepository
      */
     private $userRepository;
 
