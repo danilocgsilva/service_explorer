@@ -4,7 +4,7 @@
 
 <h1>Login</h1>
 
-<form action="" method="post">
+<form action="{{ route('login') }}" method="post">
 
     <div class="form-group">
     <label for="email">E-mail</label>

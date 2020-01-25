@@ -23,7 +23,15 @@
 
       <ul class="navbar-nav">
         <li class="nav-item">
-            <a class="nav-link" href="{{ route('login') }}">Login</span></a>
+            @auth
+              <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
+                document.getElementById('logout-form').submit();">Logout</span></a>
+              <form id="logout-form" action="{{ route('logout') }}" method="post" style="display: none">
+                @csrf
+              </form>
+            @else
+              <a class="nav-link" href="{{ route('login') }}">Login</span></a>
+            @endauth
         </li>
       </ul>
     </div>
