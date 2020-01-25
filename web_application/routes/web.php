@@ -19,5 +19,6 @@ Auth::routes([
     'confirm' => false,
     'reset' => false
 ]);
-// Auth::routes();
+Route::resource('service', 'ServiceController');
+Route::resource('server', 'ServerController');
 
