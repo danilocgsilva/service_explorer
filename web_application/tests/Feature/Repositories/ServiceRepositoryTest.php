@@ -10,6 +10,8 @@ use App\Service;
 
 class ServiceRepositoryTest extends TestCase
 {
+    use RefreshDatabase;
+
     /**
      * @var ServiceRepository
      */
@@ -17,6 +19,7 @@ class ServiceRepositoryTest extends TestCase
 
     public function setUp() : void
     {
+        parent::setUp();
         $this->serviceRepository = new ServiceRepository();
     }
 
@@ -33,9 +36,7 @@ class ServiceRepositoryTest extends TestCase
 
         $this->serviceRepository->createService($name, $serverIp, $port);
 
-        $queryRetrieve = Service::where('name', '=', $name)
-            ->where('port', '=', $port)
-            ->serverIp($serverIp);
+        $queryRetrieve = Service::where('name', '=', $name)->where('port', '=', $port)->serverIp($serverIp);
 
         $this->assertTrue($queryRetrieve->exists());
     }
