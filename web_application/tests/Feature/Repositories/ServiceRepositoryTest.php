@@ -24,7 +24,7 @@ class ServiceRepositoryTest extends TestCase
     }
 
     /**
-     * A basic feature test example.
+     * If createService method trully records data in thedatabase
      *
      * @return void
      */

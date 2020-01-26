@@ -6,6 +6,10 @@ use App\Server;
 
 class ServerRepository
 {
+    /**
+     * @param string $ip
+     * @return Server
+     */
     public function createServer(string $ip) : Server
     {
         if (Server::where(['ip' => $ip])->exists()) {
@@ -15,5 +19,14 @@ class ServerRepository
         return Server::create([
             'ip' => $ip
         ]);
+    }
+
+    /**
+     * @param string $ip
+     * @return Server
+     */
+    public function getServer(string $ip) : Server
+    {
+        return Server::where(['ip' => $ip])->first();
     }
 }

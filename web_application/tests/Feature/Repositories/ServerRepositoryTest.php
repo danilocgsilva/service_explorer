@@ -24,16 +24,32 @@ class ServerRepositoryTest extends TestCase
     }
 
     /**
-     * A basic feature test example.
+     * Tests if the Server are trully saved in the database
      *
      * @return void
      */
-    public function testRecordServer()
+    public function testRecordServer() : void
     {
         $ip = "127.9.12.2";
 
         $this->serverRepository->createServer($ip);
 
         $this->assertTrue(Server::where('ip', '=', $ip)->exists());
+    }
+
+    /**
+     * Tests if can search a server by ip
+     *
+     * @return void
+     */
+    public function testSearchServerByIp() : void
+    {
+        $ip = "127.187.23.121";
+
+        $this->serverRepository->createServer($ip);
+
+        $serverFetched = $this->serverRepository->getServer($ip);
+
+        $this->assertInstanceOf(Server::class, $serverFetched);
     }
 }
