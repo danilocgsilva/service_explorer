@@ -14,11 +14,31 @@
             <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(página atual)</span></a>
         </li>
         @auth
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('service.index') }}">Services/Endpoints</a>
+          <li class="nav-item dropdown">
+            <a 
+              href="#"
+              id="dropdown-services"
+              class="nav-link dropdown-toggle"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false">Services/Endpoint</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown-services">
+                <a href="{{ route('service.create') }}" class="dropdown-item">Create</a>
+                <a href="{{ route('service.index') }}" class="dropdown-item">List</a>
+              </div>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="{{ route('server.index') }}">Servers</a>
+          <li class="nav-item dropdown">
+            <a
+              href="#"
+              id="dropdown-servers"
+              class="nav-link dropdown-toggle"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false">Server</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown-servers">
+                <a href="{{ route('server.create') }}" class="dropdown-item">Create</a>
+                <a href="{{ route('server.index') }}" class="dropdown-item">List</a>
+              </div>
           </li>
         @endauth
       </ul>

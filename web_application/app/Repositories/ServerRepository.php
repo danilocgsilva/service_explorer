@@ -8,6 +8,7 @@ class ServerRepository
 {
     /**
      * @param string $ip
+     * 
      * @return Server
      */
     public function createServer(string $ip) : Server
@@ -23,6 +24,7 @@ class ServerRepository
 
     /**
      * @param string $ip
+     * 
      * @return Server
      */
     public function getServer(string $ip) : Server

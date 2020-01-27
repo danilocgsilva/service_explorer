@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Server;
 
 class ServerController extends Controller
 {
@@ -18,7 +19,7 @@ class ServerController extends Controller
      */
     public function index()
     {
-        return view('server.index');
+        return view('server.index', ['servers' => Server::all()]);
     }
 
     /**

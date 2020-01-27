@@ -1,5 +1,11 @@
 @extends('master')
 
 @section('content')
-Listagem de servers
+
+@if (count($servers) > 0)
+    <p>Exists</p>
+@else
+    <p>Still there's no Server registered in the database.</p>
+@endif
+
 @endsection
