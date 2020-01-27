@@ -19,6 +19,8 @@
       <input type="number" name="port" id="port" class="form-control">
     </div>
 
+    @csrf
+
     <button type="submit" class="btn btn-primary">Save</button>
 
 </form>

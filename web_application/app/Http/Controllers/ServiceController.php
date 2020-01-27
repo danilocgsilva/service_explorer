@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\ServiceRepository;
 use Illuminate\Http\Request;
 use App\Service;
 
@@ -46,9 +47,15 @@ class ServiceController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, ServiceRepository $serviceRepository)
     {
-        //
+        $serviceRepository->createService(
+            $request->name,
+            $request->server_ip,
+            $request->port
+        );
+
+        return redirect(route('service.index'));
     }
 
     /**
