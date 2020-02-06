@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\ServerRepository;
 use Illuminate\Http\Request;
 use App\Server;
 
@@ -38,9 +39,11 @@ class ServerController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, ServerRepository $serverRepository)
     {
-        //
+        $serverRepository->createServer($request->ip);
+
+        return redirect(route('server.index'));
     }
 
     /**
@@ -49,9 +52,9 @@ class ServerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Server $server)
     {
-        return view('server.show');
+        return view('server.show', compact('server'));
     }
 
     /**

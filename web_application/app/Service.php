@@ -18,4 +18,9 @@ class Service extends Model
         
         return $query;
     }
+    
+    public function server()
+    {
+        return $this->belongsTo(Server::class, 'server_id', 'id');
+    }
 }

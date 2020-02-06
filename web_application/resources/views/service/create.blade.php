@@ -16,7 +16,7 @@
 
     <div class="form-group">
       <label for="port">Port</label>
-      <input type="number" name="port" id="port" class="form-control">
+      <input type="number" name="port" id="port" class="form-control" max="65536" min="0">
     </div>
 
     @csrf
