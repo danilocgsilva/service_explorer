@@ -19,4 +19,6 @@
         No services registered in this server.
     @endif
 
+    <a href="{{ route('server.edit', $server->id) }}">Edit</a>
+
 @endsection

@@ -63,9 +63,9 @@ class ServerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Server $server)
     {
-        return view('server.edit');
+        return view('server.edit', compact('server'));
     }
 
     /**
@@ -75,7 +75,7 @@ class ServerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, ServerRepository $serverRepository, Server $server)
     {
         //
     }
