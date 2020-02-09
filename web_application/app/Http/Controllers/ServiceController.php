@@ -87,9 +87,13 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, int $serviceId, ServiceRepository $serviceRepository)
     {
-        //
+        $service = Service::find($serviceId);
+
+        $serviceRepository->change($service, 'name', $request->name);
+
+        return redirect(route('service.show', $service->id));
     }
 
     /**
