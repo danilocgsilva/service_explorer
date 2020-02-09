@@ -9,3 +9,7 @@ This project will tries to follow patterns and good practices from the MVC devel
 * Each model will have an equivalent controller with its all CRUD methods.
 * Views will present the same pattern organization for controllers.
 * Migrations will works well when the project is first deployied and no data were previously available.
+
+## Unit test
+
+The application are configured to use a real relational database to perform unit testing that reaquires writing to the database. Check the `phpunit.xml` file in the root of the web application ro see the recomendation for a database name testing. The database testing also may have the same address, user and password (no problem if in a develpment environment).
