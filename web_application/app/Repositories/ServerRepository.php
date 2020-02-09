@@ -32,4 +32,16 @@ class ServerRepository
     {
         return Server::where(['ip' => $ip])->first();
     }
+
+    /**
+     * @param Server $server
+     * @param string $property
+     * @param string $newValue
+     * 
+     * @return Server
+     */
+    public function change(Server $server, string $property, string $newValue) : bool
+    {
+        return $server->update([$property => $newValue]);
+    }
 }

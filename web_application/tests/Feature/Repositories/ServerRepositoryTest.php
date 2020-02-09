@@ -86,4 +86,19 @@ class ServerRepositoryTest extends TestCase
 
         $this->assertEquals($name, $fetchedServer->name);
     }
+
+    public function testEditName() : void
+    {
+        $serverIp = '192.168.0.9';
+        $oldName = 'LDAP testing server';
+        $newName = 'LDAP production server';
+
+        $this->serverRepository->createServer($serverIp, $oldName);
+
+        $fetchedFromDatabase = $this->serverRepository->getServer($serverIp);
+        $this->serverRepository->change($fetchedFromDatabase, 'name', $newName);
+        
+        $fetchedModified = $this->serverRepository->getServer($serverIp);
+        $this->assertEquals($newName, $fetchedModified->name);
+    }
 }

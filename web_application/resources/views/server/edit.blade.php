@@ -16,6 +16,8 @@
         <input type="text" name="name" id="name" class="form-control" placeholder="{{ $server->name }}">
     </div>
 
+    <input type="hidden" name="_method" value="PUT">
+
     <button type="submit" class="btn btn-primary">Update</button>
 
     @csrf

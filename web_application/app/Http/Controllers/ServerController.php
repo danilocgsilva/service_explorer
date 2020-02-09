@@ -41,7 +41,7 @@ class ServerController extends Controller
      */
     public function store(Request $request, ServerRepository $serverRepository)
     {
-        $serverRepository->createServer($request->ip);
+        $serverRepository->createServer($request->ip, $request->name);
 
         return redirect(route('server.index'));
     }
@@ -75,9 +75,11 @@ class ServerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ServerRepository $serverRepository, Server $server)
+    public function update(Request $request, ServerRepository $serverRepository, $server)
     {
-        //
+        $serverRepository->change($server, 'name', $request->name);
+
+        return redirect('server.show', $request->id);
     }
 
     /**

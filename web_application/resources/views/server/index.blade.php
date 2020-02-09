@@ -6,13 +6,15 @@
     <table class="table">
         <thead>
             <tr>
-                <th scope="col">Server IP</th>
+                <th scope="col">IP</th>
+                <th scope="col">Name</th>
             </tr>
         </thead>
         <tbody>
             @foreach ($servers as $server)
                 <tr>
-                    <td><a href="{{ route('server.show', $server->id) }}">{{ $server->ip }}</a></td>
+                        <td>{{ $server->ip }}</td>
+                        <td>{{ $server->name }}</td>
                 </tr>
             @endforeach
         </tbody>
