@@ -17,6 +17,9 @@ class ServerRepositoryTest extends TestCase
      */
     private $serverRepository;
 
+    /**
+     * @return void
+     */
     public function setUp() : void
     {
         parent::setUp();
@@ -51,5 +54,36 @@ class ServerRepositoryTest extends TestCase
         $serverFetched = $this->serverRepository->getServer($ip);
 
         $this->assertInstanceOf(Server::class, $serverFetched);
+    }
+
+    /**
+     * Tests if trully saves the server ip
+     *
+     * @return void
+     */
+    public function testRecordIp() : void
+    {
+        $ip = "234.108.94.0";
+
+        $this->serverRepository->createServer($ip);
+
+        $fetchedServer = $this->serverRepository->getServer($ip);
+
+        $this->assertEquals($ip, $fetchedServer->ip);
+    }
+
+    /**
+     * @return void
+     */
+    public function testeRecordName() : void
+    {
+        $name = "LDAP Server";
+        $ipToFetch = "192.168.0.1";
+
+        $this->serverRepository->createServer($ipToFetch, $name);
+
+        $fetchedServer = $this->serverRepository->getServer($ipToFetch);
+
+        $this->assertEquals($name, $fetchedServer->name);
     }
 }

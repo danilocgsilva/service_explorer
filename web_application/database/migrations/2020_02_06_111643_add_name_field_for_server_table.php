@@ -17,7 +17,7 @@ class AddNameFieldForServerTable extends Migration
     public function up()
     {
         Schema::table(self::TABLE_NAME, function(Blueprint $table) {
-            $table->string('name', 255)->after('ip');
+            $table->string('name', 255)->nullable()->after('ip');
         });
     }
 
