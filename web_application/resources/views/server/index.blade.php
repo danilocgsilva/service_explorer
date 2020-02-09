@@ -13,8 +13,12 @@
         <tbody>
             @foreach ($servers as $server)
                 <tr>
-                        <td>{{ $server->ip }}</td>
-                        <td>{{ $server->name }}</td>
+                    <td>
+                        <a href="{{ route('server.show', $server->id) }}">{{ $server->ip }}</a>
+                    </td>
+                    <td>
+                        <a href="{{ route('server.show', $server->id) }}">{{ $server->name }}</a>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

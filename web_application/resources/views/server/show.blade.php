@@ -6,7 +6,11 @@
     <br>
     <br>
 
-    <h2>Server IP: {{ $server->ip }}</h2>
+    @if ($server->name)
+        <h2>    {{ $server->name }}</h2>
+    @endif
+
+    <h3>IP: {{ $server->ip }}</h3>
 
     @if ($server->services->count() > 0)
         <p>Services hosted in this server:</p>
@@ -19,6 +23,7 @@
         No services registered in this server.
     @endif
 
-    <a href="{{ route('server.edit', $server->id) }}">Edit</a>
+    <br>
+    <a class="btn btn-primary" href="{{ route('server.edit', $server->id) }}">Edit</a>
 
 @endsection

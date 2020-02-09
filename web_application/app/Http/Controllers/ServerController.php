@@ -75,11 +75,13 @@ class ServerController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, ServerRepository $serverRepository, $server)
+    public function update(Request $request, ServerRepository $serverRepository, int $serverId)
     {
+        $server = Server::find($serverId);
+
         $serverRepository->change($server, 'name', $request->name);
 
-        return redirect('server.show', $request->id);
+        return redirect(route('server.show', $server->id));
     }
 
     /**

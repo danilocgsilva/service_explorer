@@ -13,7 +13,7 @@
 
     <div class="form-group">
         <label for="name">Server name</label>
-        <input type="text" name="name" id="name" class="form-control" placeholder="{{ $server->name }}">
+        <input type="text" name="name" id="name" class="form-control" value="{{ $server->name }}">
     </div>
 
     <input type="hidden" name="_method" value="PUT">
