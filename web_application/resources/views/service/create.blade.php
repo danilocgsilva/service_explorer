@@ -2,6 +2,11 @@
 
 @section('content')
 
+Register any resource reachable by web.
+
+<br>
+<br>
+
 <form action="{{ route('service.store') }}" method="post">
 
     <div class="form-group">

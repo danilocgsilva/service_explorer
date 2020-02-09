@@ -7,7 +7,7 @@
 <form action="{{ route('server.store') }}" method="post">
 
     <div class="form-group">
-      <label for="ip">Server IP</label>
+      <label for="ip">Server IP or DNS address</label>
       <input type="text" name="ip" id="ip" class="form-control" aria-describedby="helpId">
     </div>
 

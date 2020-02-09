@@ -1,1 +1,8 @@
 web_application/package-lock.json
+web_application/public/js/app.js.map
+.vscode/launch.json
+web_application/.vscode/launch.json
+web_application/public/info.php
+web_application/public/css/app.css
+web_application/public/js/app.js
+web_application/public/mix-manifest.json

@@ -14,7 +14,7 @@
         <tbody>
             @foreach ($services as $service)
                 <tr>
-                    <td>{{ $service->name }}</td>
+                    <td><a href="{{ route('service.show', $service->id) }}">{{ $service->name }}</a></td>
                     <td>{{ $service->port }}</td>
                     <td><a href="{{ route('server.show', $service->server->id) }}">{{ $service->server->ip }}</a></td>
                 </tr>
@@ -22,7 +22,7 @@
         </tbody>
     </table>
 @else
-    <p>There's still no service registered in the system.</p>
+    <p>There's still no service registered in the system. You can <a href="{{ route('service.create') }}">create one</a>.</p>
 @endif
 
 @endsection

@@ -64,9 +64,9 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Service $service)
     {
-        return view('service.show');
+        return view('service.show', compact('service'));
     }
 
     /**
@@ -75,9 +75,9 @@ class ServiceController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Service $service)
     {
-        //
+        return view('service.edit', compact('service'));
     }
 
     /**
