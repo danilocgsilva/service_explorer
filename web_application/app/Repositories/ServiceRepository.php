@@ -14,7 +14,14 @@ class ServiceRepository
      * 
      * @return Service
      */
-    public function createService(string $name, string $serverIp, int $port) : Service
+    public function createService(
+        string $name, 
+        string $serverIp, 
+        int $port,
+        string $path = null,
+        string $username = null,
+        string $password = null
+    ) : Service
     {
         $serverCheck = Server::where(['ip' => $serverIp]);
         if ($serverCheck->exists()) {
@@ -28,7 +35,10 @@ class ServiceRepository
         return Service::create([
             'name' => $name,
             'server_id' => $serverId,
-            'port' => $port
+            'port' => $port,
+            'path' => $path,
+            'username' => $username,
+            'password' => $password
         ]);
     }
 

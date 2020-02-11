@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Service extends Model
 {
-    protected $fillable = ['name', 'port', 'server_id'];
+    protected $fillable = ['name', 'port', 'server_id', 'path', 'username', 'password'];
     
     public function scopeServerIp($query, string $serverIp)
     {

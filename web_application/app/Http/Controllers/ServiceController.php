@@ -52,7 +52,10 @@ class ServiceController extends Controller
         $serviceRepository->createService(
             $request->name,
             $request->server_ip,
-            $request->port
+            $request->port,
+            $request->path,
+            $request->username,
+            $request->password
         );
 
         return redirect(route('service.index'));
@@ -90,8 +93,10 @@ class ServiceController extends Controller
     public function update(Request $request, int $serviceId, ServiceRepository $serviceRepository)
     {
         $service = Service::find($serviceId);
-
         $serviceRepository->change($service, 'name', $request->name);
+        $serviceRepository->change($service, 'path', $request->path);
+        $serviceRepository->change($service, 'username', $request->username);
+        $serviceRepository->change($service, 'password', $request->password);
 
         return redirect(route('service.show', $service->id));
     }
