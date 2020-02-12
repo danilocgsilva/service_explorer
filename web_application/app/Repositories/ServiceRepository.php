@@ -18,6 +18,7 @@ class ServiceRepository
         string $name, 
         string $serverIp, 
         int $port,
+        string $protocol,
         string $path = null,
         string $username = null,
         string $password = null
@@ -36,6 +37,7 @@ class ServiceRepository
             'name' => $name,
             'server_id' => $serverId,
             'port' => $port,
+            'protocol' => $protocol,
             'path' => $path,
             'username' => $username,
             'password' => $password
