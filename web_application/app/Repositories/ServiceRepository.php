@@ -59,7 +59,7 @@ class ServiceRepository
      * 
      * @return boolean
      */
-    public function change(Service $service, string $property, string $newValue) : bool
+    public function change(Service $service, string $property, string $newValue = null) : bool
     {
         return $service->update([$property => $newValue]);
     }

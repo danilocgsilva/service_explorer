@@ -16,7 +16,7 @@ class EnlargeDataInServerIp extends Migration
     public function up()
     {
         Schema::table(self::TABLE, function (Blueprint $table) {
-            $table->string('ip', 128)->unique()->change();
+            $table->string('ip', 128)->change();
         });
     }
 
@@ -28,7 +28,7 @@ class EnlargeDataInServerIp extends Migration
     public function down()
     {
         Schema::table(self::TABLE, function (Blueprint $table) {
-            $table->string('ip', 15)->unique();
+            $table->string('ip', 15)->change();
         });
     }
 }
