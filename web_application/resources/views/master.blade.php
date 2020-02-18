@@ -6,7 +6,7 @@
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 
-    <title>Hello, world!</title>
+    <title>Service Explorer</title>
   </head>
   <body>
 
@@ -14,7 +14,6 @@
 
     @yield('content')
 
-    
   <script src="{{ asset('js/app.js') }}"></script>
   </body>
 </html>
