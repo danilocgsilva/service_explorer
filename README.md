@@ -28,3 +28,10 @@ This solution is composed of:
 * LICENCE: Obvious, the LICENCE of the project.
 * web_application: The web application intended to be installed in a serve to store endpoints informations.
 * local_checker: A script to run in the machine where application is installed to keep track to which the local development machine is connected to. It can serve both to be installed in the development machine or in the server machine.
+
+## Hints for development
+
+Just installed the application in your environment? Then you need:
+* Create a local database with the same name provided in the `.env` file from root application.
+* Create a testing user with the following command: `php artisan create:user {email} {password}`
+
