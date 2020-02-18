@@ -1,6 +1,6 @@
 <nav 
     class="navbar 
-        navbar-expand-lg 
+        navbar-expand-md 
         navbar-light 
         bg-light 
         justify-content-between">
