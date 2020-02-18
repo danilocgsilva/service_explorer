@@ -18,7 +18,7 @@ class ServiceRepository
         string $name, 
         string $serverIp, 
         int $port,
-        string $protocol,
+        string $protocol = null,
         string $path = null,
         string $username = null,
         string $password = null
